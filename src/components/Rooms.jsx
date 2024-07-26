@@ -36,7 +36,7 @@ function Rooms() {
     } , [])
 
   return (
-    <div className=' relativecontainer mx-auto flex flex-wrap gap-3 justify-around items-center  mt-[100px] overflow-y-scroll px-3 py-6 pb-[150px]'>
+    <div className=' relative container mx-auto flex flex-wrap gap-3 justify-around items-center   overflow-y-scroll px-3 py-6 pb-[150px]'>
 
 
 
@@ -90,7 +90,7 @@ function Rooms() {
       }
 
       return(
-        <div className=" absolute formCreateRoom  h-dvh bg-mainBg top-[100px] left-0   flex items-start justify-center   py-6 w-full p-3">
+        <div className=" absolute formCreateRoom  h-dvh bg-mainBg top-0 left-0   flex items-start justify-center   py-6 w-full p-3">
 
             <form onSubmit={(e)=> handleCreatingRoom(e)}
              className='relative flex flex-col bg-[#353535] md:w-[30rem] w-full rounded-[1rem] p-4  gap-4 text-center'>

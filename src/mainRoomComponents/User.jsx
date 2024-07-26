@@ -68,7 +68,7 @@ function User(props) {
                 </div>
         
 
-        {name && name.split(' ')[0]}
+        {name && name ? name.split(' ')[0]:'Anonymous'}
     </div>
   )
 }
