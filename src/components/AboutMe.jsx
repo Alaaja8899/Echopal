@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 function AboutMe() {
   return (
-    <div className='h-screen flex items-center justify-center  container mx-auto'>
+    <div className=' flex items-center justify-center  container mx-auto'>
 
 
-        <div className="card bg-[#353535] md:w-9/12 w-full p-3 rounded flex flex-col items-center justify-center ">
+        <div className="card bg-[#353535] md:w-9/12 w-full p-3 rounded flex flex-col items-center justify-center gap-3">
 
             <div className="header flex items-center justify-between border rounded border-red-500 p-3 w-full">
             <Link to={'/'}>
@@ -18,7 +18,7 @@ function AboutMe() {
             </Link>
             <Link to={'/'}>
                 <span>
-
+                <box-icon name='left-arrow-alt' color={'#ffff'}></box-icon>
                 </span>
             </Link>
 
@@ -38,7 +38,7 @@ function AboutMe() {
                     >
                     <box-icon color={'#ffff'} type='logo' name='instagram-alt'></box-icon>
                     </a>
-                    <a href="https://facebook.com/abdirizak.alaaja"
+                    <a href="https://facebook.com/abdirizak.alaaja" target='_blank'
                                         className='p-1  rounded bg-red-500 flex items-center justify-center'
 
                     >
