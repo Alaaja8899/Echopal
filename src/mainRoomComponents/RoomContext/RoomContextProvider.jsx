@@ -3,6 +3,7 @@ import { useAuthContext } from '../../Context/Context'
 import { setMicState } from '../../database'
 
 import AgoraRTC from 'agora-rtc-sdk-ng'
+import InRoomSound from '../../assets/sounds/in-room.wav'
 
 
 
@@ -40,6 +41,7 @@ function RoomContextProvider({children}) {
   
       setClient(client);
       setTracks(prevTracks => ({ ...prevTracks, LocalAudioTrack: audioTrack }));
+      client.on("user-joined" , handleUserJoined)
     };
     const LeaveChanel = () => {
       if(audioTracks.LocalAudioTrack){
@@ -56,7 +58,10 @@ function RoomContextProvider({children}) {
 
 
       const handleUserJoined = async (user)=>{
-          // console.log("newUser :" , user);
+        const audio = new Audio(InRoomSound);
+        audio.volume = 0.1;
+        audio.play();
+  
       }
       const handleUserLeft=async(user)=>{
           delete audioTracks.remoteAudioTracks[user.uid]

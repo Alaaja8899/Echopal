@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import User from './User'
 import { useRoomContext } from './RoomContext/RoomContextProvider.jsx'
 import {database} from '../database.js'
-
 import {useObject} from 'react-firebase-hooks/database'
 import { ref , query , orderByChild } from 'firebase/database'
 
@@ -27,12 +26,8 @@ function Users() {
   const   users= snapshot && snapshotToArray(snapshot)
 
 
-    useEffect(()=>{
-
-
-        // console.log(users);
-
-    } , [])
+    // useEffect(()=>{
+    // } , [snapshot])
 
   return (
     <div className='flex flex-wrap gap-2 overflow-y-scroll pb-[110px] md:justify-start justify-between'>
