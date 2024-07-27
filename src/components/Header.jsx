@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuthContext } from '../Context/Context'
-
+import { Link } from 'react-router-dom'
 function Header() {
     const {authenticated , user} = useAuthContext()
 
@@ -16,9 +16,14 @@ function Header() {
             </h2>
 
             <div className="backMenue flex gap-3 items-center justify-between">
-                <span className='cursor-pointer flex items-center'>
+               <Link to={'/info'}> 
+                <span className='cursor-pointer flex items-center'
+
+                >
                 <box-icon size={'30px'} name='info-circle' color={'#ef4444'}></box-icon>
                 </span>
+                </Link>
+
                 <div onClick={()=> logout()}
                  className="photo w-[30px] h-[30px] rounded-full overflow-hidden cursor-pointer">
                 <img src={user.photoURL}  />
