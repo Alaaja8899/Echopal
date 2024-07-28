@@ -1,5 +1,9 @@
 # Echopal  V2.0 🔥
 
+![room-echopal](https://github.com/user-attachments/assets/fd727cb4-46a6-4481-86de-f1893d0d0072)
+
+
+
 Echopal is  a live audio streaming web application where users can create and join various rooms to chat with friends or meet new people. It helps communities discuss their interests, whether it's anime (for otaku people), for developers , for family & freind or classmates discussion
 
 `CEO & CO-Founder of echopal is : Abdirizak abdullahi hussein (Alaaja)`
