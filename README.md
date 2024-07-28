@@ -1,6 +1,8 @@
 # Echopal  V2.0 🔥
 
-![room-echopal](https://github.com/user-attachments/assets/fd727cb4-46a6-4481-86de-f1893d0d0072)
+![login-echopal](https://github.com/user-attachments/assets/3f78347e-3a27-4754-b72f-a704b3e60648)
+![home-echopal](https://github.com/user-attachments/assets/4aea4316-c003-4b3e-ba3f-04cdf438c0e4)
+![room-echopal](https://github.com/user-attachments/assets/4a4b0291-cd20-409e-9f04-422d8e4c466d)
 
 
 
