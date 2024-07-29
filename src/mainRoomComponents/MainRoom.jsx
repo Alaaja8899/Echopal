@@ -7,7 +7,7 @@ import { CheckAndCloseRoom, RemoveUserFromRoom, getRoomTitle } from '../database
 
 function MainRoom() {
     const {setRooming , user} = useAuthContext()
-    const {mic , setMic , ProfileOpen , LeaveChanel} = useRoomContext()
+    const {mic , setMic , ProfileOpen , LeaveChanel , initRtc} = useRoomContext()
     const [RoomTitle , setTitle] = useState('')
     const LeaveRoom=()=>{
         LeaveChanel()
@@ -26,7 +26,9 @@ function MainRoom() {
     getRoomTitle(localStorage.getItem('RoomID')).then(title=>{
         setTitle(title)
         console.log('room set to :' ,title );
+        
       })
+      initRtc()
     
     },[])
   return (

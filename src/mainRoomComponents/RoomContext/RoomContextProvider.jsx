@@ -97,16 +97,7 @@ function RoomContextProvider({children}) {
           
           setSpeakers(spUsers);
         })
-      }
-
-      useEffect(() => {
-        const timeoutId = setTimeout(() => {
-          initRtc();
-        }, 200);
-        // console.log("hello room");
-        return () => clearTimeout(timeoutId);
-      }, []);
-      
+      }      
       useEffect(() => {
         if (rtcClient !== null) {
           rtcClient.on("user-published", handleUserPublished);
@@ -133,7 +124,7 @@ function RoomContextProvider({children}) {
       setMicState(user.uid , roomID , !mic)
     } ,[mic , audioTracks.LocalAudioTrack])
 
-    const value = {mic , setMic , ProfileOpen , setProfile   , RoomTitle , setPop , PopProfile , LeaveChanel , activeSpeakers}
+    const value = {mic , setMic , ProfileOpen , setProfile   , RoomTitle , setPop , PopProfile , LeaveChanel , activeSpeakers , initRtc}
   return (
     <roomContext.Provider value={value}>
                 {children}
