@@ -26,7 +26,12 @@ const AuthUsers = () => {
             className='font-bold border-l-4 border-red-500 px-3'
             >
             
-            Users joinded the Echopal 
+            Users joinded the Echopal <br />
+            <p
+            className='text-[#777]'
+            >
+            // This feature is not available yet!
+            </p>
 
             </h2>
 

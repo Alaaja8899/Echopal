@@ -113,7 +113,7 @@ function Rooms() {
               Create an Account To continue
               </p>
               <p className='error text-red-500 bg-[rgb(255,0,0,0.2)] p-3 rounded'>
-                You can't create Room !
+              In GuestMode  You can't create Room !
               </p>
                 </div>
               }
