@@ -3,7 +3,7 @@ import { useAuthContext } from '../Context/Context';
 import { useRoomContext } from './RoomContext/RoomContextProvider';
 
 function User(props) {
-    const {photo ,name , uid , muted}  = props.data
+    const {photo ,name , uid , muted , country , city}  = props.data
     const {authenticated , user} = useAuthContext()
     const {mic , setProfile , setPop , activeSpeakers} = useRoomContext()
     const [roles , setRoles] = useState({
@@ -34,7 +34,7 @@ function User(props) {
 
 
     const handleProfile=()=>{
-        setPop({name:name , photo:photo , uid:uid})
+        setPop({name:name , photo:photo , uid:uid , city:city , country:country})
         setProfile(true)
     }
 

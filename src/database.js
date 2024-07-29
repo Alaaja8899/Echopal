@@ -18,6 +18,10 @@ export const database = getDatabase(app);
 
 
 export const JoinUserToRoom = (photo , userID , name , RoomID) => {
+
+  const location = JSON.parse(localStorage.getItem('location'))
+
+
   const messagesRef = ref(database, `Rooms/${RoomID}/users/${userID}` );
   set(messagesRef, {
     name : name, 
@@ -25,7 +29,9 @@ export const JoinUserToRoom = (photo , userID , name , RoomID) => {
     photo:photo,
     // role :roleM,
     muted:true,
-    timestamp: serverTimestamp()
+    timestamp: serverTimestamp(),
+    city: location.City,
+    country:location.Country
   }).then(() => {
     //
   }).catch((error) => {

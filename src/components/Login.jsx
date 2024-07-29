@@ -7,7 +7,7 @@ import { authenticateUser } from '../Auth'
 function Login() {
   const [newID , setID] = useState(Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 4).toUpperCase())
     const GuestUser = {
-      displayName:"GuestUser",
+      displayName:`Guest-${newID}`,
       photoURL:"https://static.vecteezy.com/system/resources/previews/023/741/062/non_2x/discord-logo-icon-social-media-icon-free-png.png",
       uid:`GuestUser-${newID}`,
       isGuest:true 

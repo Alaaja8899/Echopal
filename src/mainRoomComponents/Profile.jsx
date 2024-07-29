@@ -52,7 +52,12 @@ function Profile() {
                             `UID : ${PopProfile && PopProfile.uid}`
                         }
                     </h2>
-                    
+                    <h2
+                    className='flex items-center justify-center font-bold'
+                    >
+                    <box-icon type='logo' name='mongodb' color={'red'}></box-icon>
+                        {PopProfile.city && ` ${PopProfile.city} , ${PopProfile.country } `}
+                    </h2>
 
 
                     {/* mod Controls */}
