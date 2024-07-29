@@ -4,10 +4,11 @@ import { useRoomContext } from './RoomContext/RoomContextProvider'
 import Users from './Users'
 import Profile from './Profile'
 import { CheckAndCloseRoom, RemoveUserFromRoom, getRoomTitle } from '../database'
+import Chatts from './Chatts'
 
 function MainRoom() {
     const {setRooming , user} = useAuthContext()
-    const {mic , setMic , ProfileOpen , LeaveChanel , initRtc} = useRoomContext()
+    const {mic , setMic , ProfileOpen , LeaveChanel , initRtc , chatting , setChatting} = useRoomContext()
     const [RoomTitle , setTitle] = useState('')
     const LeaveRoom=()=>{
         LeaveChanel()
@@ -67,6 +68,14 @@ function MainRoom() {
 
             </div>
 
+            <div className="mid">
+                <button className='bg-red-500 w-[50px] h-[50px] rounded-full p-3 flex items-center justify-center'
+                onClick={()=> setChatting(true)}
+                >
+                <box-icon name='message-dots' color={'#ffff'}></box-icon>
+                </button>
+            </div>
+
             <div className="right">
 
                 <div onClick={()=> setMic(!mic)}
@@ -84,7 +93,7 @@ function MainRoom() {
 
             {ProfileOpen && <Profile/>}
 
-
+            {chatting && <Chatts/>}
 
 
     </div>

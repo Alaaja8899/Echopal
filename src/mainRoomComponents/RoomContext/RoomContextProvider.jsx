@@ -17,7 +17,7 @@ function RoomContextProvider({children}) {
     const {user} = useAuthContext()
     const [activeSpeakers , setSpeakers] =useState([])
     const RoomTitle = "Hello world!"
-
+    const [chatting , setChatting] = useState(false)
 
 
     const appID = 'bd8e061fa8a54f47b9c530538662bcad'
@@ -124,7 +124,7 @@ function RoomContextProvider({children}) {
       setMicState(user.uid , roomID , !mic)
     } ,[mic , audioTracks.LocalAudioTrack])
 
-    const value = {mic , setMic , ProfileOpen , setProfile   , RoomTitle , setPop , PopProfile , LeaveChanel , activeSpeakers , initRtc}
+    const value = {mic , setMic , ProfileOpen , setProfile   , RoomTitle , setPop , PopProfile , LeaveChanel , activeSpeakers , initRtc , chatting , setChatting}
   return (
     <roomContext.Provider value={value}>
                 {children}
