@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import heroImg from '../assets/imgs/hero.svg'
 import logo from '../assets/imgs/logo.png'
 import 'boxicons'
 import roomImg from '../assets/imgs/Room.png'
 import { authenticateUser } from '../Auth'
 function Login() {
+  const [newID , setID] = useState(Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 4).toUpperCase())
+    const GuestUser = {
+      displayName:"GuestUser",
+      photoURL:"https://static.vecteezy.com/system/resources/previews/023/741/062/non_2x/discord-logo-icon-social-media-icon-free-png.png",
+      uid:`GuestUser-${newID}`,
+      isGuest:true 
+    }
+
+    const registerAsGuest =()=>{
+      localStorage.setItem('user' , JSON.stringify(GuestUser))
+      location.reload()
+    }
+
+
   return (
     <div className='flex items-center justify-center py-6 gap-2 h-screen flex-col text-center p-3 container mx-auto  md:w-[40rem] w-full  rounded-[1rem] '>
 
@@ -34,6 +48,14 @@ function Login() {
                 <span className='font-bold'>
                 Google
                 </span>
+            </button>
+            
+            {/* GuestUser */}
+            <button onClick={()=> registerAsGuest()}
+            className='bg-red-500 flex rounded w-9/12 items-center justify-center p-3 gap-3'
+            >
+                  <img className='w-[40px]' src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png"  />
+                  Continue As <span> GuestUser</span> 
             </button>
 
     </div>

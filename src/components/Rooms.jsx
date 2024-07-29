@@ -36,7 +36,7 @@ function Rooms() {
     } , [])
 
   return (
-    <div className=' relative container mx-auto flex flex-wrap gap-3 justify-around items-center   overflow-y-scroll px-3 py-6 pb-[150px]'>
+    <div className='  container mx-auto flex flex-wrap gap-3 justify-around items-center   overflow-y-scroll px-3 py-6 pb-[150px]'>
 
 
 
@@ -76,9 +76,13 @@ function Rooms() {
       const {setRooming , setCreating} = useAuthContext()
       const [textValue , setValue] = useState('')
       const {user} = useAuthContext()
+      const logout = ()=>{
+        localStorage.clear()
+        location.reload()
+    }
       const  handleCreatingRoom= async (e)=>{
             e.preventDefault()
-            if (textValue.length >0){
+            if (textValue.length >0 && !user.isGuest){
 
               await CreateNewRoom(textValue , user)
 
@@ -90,7 +94,7 @@ function Rooms() {
       }
 
       return(
-        <div className=" absolute formCreateRoom  h-dvh bg-mainBg top-0 left-0   flex items-start justify-center   py-6 w-full p-3">
+        <div className=" absolute formCreateRoom  h-dvh bg-mainBg top-[100px] left-0   flex items-start justify-center   py-6 w-full p-3">
 
             <form onSubmit={(e)=> handleCreatingRoom(e)}
              className='relative flex flex-col bg-[#353535] md:w-[30rem] w-full rounded-[1rem] p-4  gap-4 text-center'>
@@ -102,13 +106,37 @@ function Rooms() {
 
 
               <h2 className='font-medium text-2xl'>Live SetUp <box-icon name='wrench' color={'white'}></box-icon></h2>
+
+              {
+                user.isGuest && <div className='flex flex-col gap-2'>
+                                <p>
+              Create an Account To continue
+              </p>
+              <p className='error text-red-500 bg-[rgb(255,0,0,0.2)] p-3 rounded'>
+                You can't create Room !
+              </p>
+                </div>
+              }
+
               <input onChange={(e)=> setValue(e.target.value)} 
               className=' bg-transparent border-red-400 border  outline-none rounded-[0.5rem] p-3 text-white' type="text" placeholder='Room Title ' />
               <button
-              className='bg-red-500 p-3 rounded-[0.5rem]'
+              className={`bg-red-500 p-3 rounded-[0.5rem] ${user.isGuest &&  'cursor-not-allowed bg-transparent border'}`}
               >
                 Go live now <box-icon name='podcast' color={'white'}></box-icon>
               </button>
+
+
+              {
+                user.isGuest &&               <button onClick={()=> logout()}
+                className='bg-gray-500 rounded p-3 flex items-center justify-center gap-3'
+                >
+                  LogOut & Create an Account
+                  <box-icon type='solid' name='left-arrow-square' color={'#ffff'}></box-icon>
+                </button>
+  
+              }
+
             </form>
 
 
