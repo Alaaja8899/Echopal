@@ -17,7 +17,7 @@ function Context({children}) {
         }
     } , [])
 
-    const value ={authenticated , CreatingRoom , setCreating , Rooming , setRooming , user}
+    const value ={authenticated , CreatingRoom , setCreating , Rooming , setRooming , user , location}
   return (
     <authContext.Provider value={value}>
         {children}

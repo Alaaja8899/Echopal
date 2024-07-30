@@ -31,7 +31,7 @@ function Profile() {
                                 🛡️
                         </div>
 
-                                <img className='w-[100px]' src={PopProfile && PopProfile.photo}  />
+                                <img className='w-[100px] border border-red-500 rounded-[30%]' src={PopProfile && PopProfile.photo}  />
                     </div>
 
 

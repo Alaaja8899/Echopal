@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "agora-rtc-sdk-ng": "^4.21.0",
+    "axios": "^1.7.2",
     "boxicons": "^2.1.4",
     "firebase": "^10.12.2",
     "firebase-admin": "^12.3.0",

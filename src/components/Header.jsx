@@ -20,12 +20,12 @@ function Header() {
                 <span className='cursor-pointer flex items-center'
 
                 >
-                <box-icon size={'30px'} name='info-circle' color={'#ef4444'}></box-icon>
+                <box-icon size={'35px'} name='info-circle' color={'#ef4444'}></box-icon>
                 </span>
                 </Link>
 
                 <div onClick={()=> logout()}
-                 className="photo w-[30px] h-[30px] rounded-full overflow-hidden cursor-pointer">
+                 className="photo w-[40px] h-[40px] rounded-full overflow-hidden cursor-pointer border border-red-500">
                 <img src={user.photoURL}  />
                 </div>
 

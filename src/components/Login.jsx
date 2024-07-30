@@ -4,18 +4,25 @@ import logo from '../assets/imgs/logo.png'
 import 'boxicons'
 import roomImg from '../assets/imgs/Room.png'
 import { authenticateUser } from '../Auth'
+import { useAuthContext } from '../Context/Context'
+import axios from 'axios'
 function Login() {
   const [newID , setID] = useState(Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 4).toUpperCase())
-    const GuestUser = {
-      displayName:`Guest-${newID}`,
-      photoURL:"https://static.vecteezy.com/system/resources/previews/023/741/062/non_2x/discord-logo-icon-social-media-icon-free-png.png",
-      uid:`GuestUser-${newID}`,
-      isGuest:true 
-    }
 
     const registerAsGuest =()=>{
+    axios.get('https://random-data-api.com/api/v2//users? response_type=json').then(data=>{
+      console.log(data.data);
+      const GuestUser = {
+        displayName:`${data.data.first_name} , ${data.data.last_name}`,
+        photoURL:`${data.data.avatar}` ,  
+        uid:`${data.data.uid}`,
+        isGuest:true 
+      }
+  
       localStorage.setItem('user' , JSON.stringify(GuestUser))
       location.reload()
+
+    })
     }
 
 
