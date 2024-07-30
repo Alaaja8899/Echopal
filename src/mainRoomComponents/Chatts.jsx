@@ -16,7 +16,7 @@ function Chatts() {
   return (
     <div className='bg-[#353535] h-dvh  absolute top-0  bottom-[100px] right-0 rounded-t-[1rem]  w-full'>
        
-        <header className='bg-black w-full h-[70px] p-3 flex items-center justify-between'>
+        <header className='fixed  bg-black  right-0 left-0 h-[70px] p-3 flex items-center justify-between'>
 
             <p
             className='border-l-4  border-red-500 px-3'

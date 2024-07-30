@@ -62,8 +62,12 @@ function MainRoom() {
             <div className="left">
 
             <button onClick={()=> LeaveRoom()}
-             className='text-red-500 hover:bg-[#252525] p-3 rounded'>
-                     ✌️ Leave quietly
+             className='text-red-500  p-3 rounded'>
+
+                <img
+                className='w-[50px] h-[50px] rounded-full'
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLZ_cZ6cdJ5D3Eq1euwXiqPpYLdLBzuPvw_g&s"  />
+                
             </button>
 
             </div>
