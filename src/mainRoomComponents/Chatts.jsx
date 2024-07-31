@@ -2,26 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { getRoomTitle } from '../database'
 import 'boxicons'
 import { useRoomContext } from './RoomContext/RoomContextProvider'
-function Chatts() {
-    const [title , setTitle] = useState('')
+function Chatts(prop) {
+    // const [title , setTitle] = useState('')
     const {setChatting} = useRoomContext()
 
-        useEffect(()=>{
-            getRoomTitle(localStorage.getItem('RoomID')).then(title=>{
-                setTitle(title)
-                console.log('room set to :' ,title );
-              })
-        
-        } ,[])
+        // useEffect(()=>{        
+        // } ,[])
   return (
-    <div className='bg-[#353535] h-dvh  absolute top-0  bottom-[100px] right-0 rounded-t-[1rem]  w-full'>
+    <div className='bg-[#353535] h-dvh  absolute top-0  bottom-[100px] right-0 rounded-t-[1rem] md:w-1/2 w-full'>
        
-        <header className='fixed  bg-black  right-0 left-0 h-[70px] p-3 flex items-center justify-between'>
+        <header className='fixed md:relative  bg-black  right-0 left-0 h-[70px] p-3 flex items-center justify-between'>
 
             <p
             className='border-l-4  border-red-500 px-3'
             >
-                {title}
+                {prop.title}
             </p>
 
             <button onClick={()=> setChatting(false)}

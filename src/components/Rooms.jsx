@@ -5,7 +5,7 @@ import { CheckAndCloseRoom, CloseRoom, CreateNewRoom, JoinUserToRoom } from '../
 import {database} from '../database.js'
 import {useObject , useObjectVal} from 'react-firebase-hooks/database'
 import { ref , query , orderByChild } from 'firebase/database'
-
+import Authusers from './AuthUsers.jsx'
 
 
 
@@ -38,7 +38,7 @@ function Rooms() {
   return (
     <div className='  container mx-auto flex flex-wrap gap-3 justify-around items-center   overflow-y-scroll px-3 py-6 pb-[150px]'>
 
-
+        <Authusers/>
 
         {
           snapshot && snapshotToArray(snapshot).reverse().map(room=>{

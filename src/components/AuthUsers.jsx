@@ -20,7 +20,7 @@ const AuthUsers = () => {
         
 
     return (
-    <div className='mt-[100px]   px-6 py-3 rounded flex flex-col gap-3'>
+    <div className='mt-[100px]    py-3 rounded flex flex-col gap-3 max-w-full'>
 
             <h2
             className='font-bold border-l-4 border-red-500 px-3'

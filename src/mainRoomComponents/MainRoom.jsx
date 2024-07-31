@@ -97,7 +97,7 @@ function MainRoom() {
 
             {ProfileOpen && <Profile/>}
 
-            {chatting && <Chatts/>}
+            {chatting && <Chatts title={RoomTitle}/>}
 
 
     </div>
