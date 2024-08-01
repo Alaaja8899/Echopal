@@ -11,7 +11,7 @@ const roomContext = createContext()
 
 
 function RoomContextProvider({children}) {
-    const [mic , setMic] = useState(false)
+    const [mic , setMic] = useState(true)
     const [ProfileOpen , setProfile]=useState(false)
     const [PopProfile , setPop] = useState({})
     const {user} = useAuthContext()

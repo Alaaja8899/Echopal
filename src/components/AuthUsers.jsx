@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import 'boxicons'
+import axios from 'axios'
 // import { getAllUsers } from '../admin'
 
 
@@ -12,10 +13,7 @@ const AuthUsers = () => {
     const [users , setUsers] = useState([])
 
         useEffect(()=>{
-            // getAllUsers().then(users => {
-            //     console.log(users);
-            //   });  
-              
+            // fetch('/auth_users.json')
         } , [])
         
 
