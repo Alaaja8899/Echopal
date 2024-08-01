@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { fetchIPLocation } from '../extraFunctions'
+import { fetchIPLocation, requestMicPermission } from '../extraFunctions'
 const authContext = createContext()
 function Context({children}) {
     const [authenticated , setAuth] = useState(localStorage.getItem('user') ? true:false)
@@ -15,6 +15,7 @@ function Context({children}) {
         }else{
           console.log("userLocation : " , location);
         }
+        requestMicPermission()
     } , [])
 
     const value ={authenticated , CreatingRoom , setCreating , Rooming , setRooming , user , location}
