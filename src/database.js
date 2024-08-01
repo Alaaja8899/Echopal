@@ -54,7 +54,9 @@ export const CreateNewRoom = (Roomtitle , user) => {
     const messagesRef = ref(database, `Rooms/${user.uid}/` );
     set(messagesRef, {
         title : Roomtitle,
-        timestamp : serverTimestamp()
+        timestamp : serverTimestamp() , 
+        creator:user.displayName,
+        userPhoto:user.photoURL
     }).then(() => {
       //
     }).catch((error) => {
