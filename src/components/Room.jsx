@@ -23,7 +23,7 @@ function Room(props) {
 
   return (
     <div onClick={()=> joiningRoom()} 
-    className='bg-[#353535] flex flex-col p-4  rounded-[1rem] md:w-[30rem]  relative h-[150px] gap-4 hover:border hover:border-red-500 cursor-pointer w-full'>
+    className='bg-[#353535] flex flex-col p-4  rounded-[1rem] md:w-[30rem]  relative h-[178px] gap-4 hover:border hover:border-red-500 cursor-pointer w-full'>
         <span className='Room absolute top-[-8px] left-[-5px]   rounded-full bg-mainBg w-[30px] h-[30px] flex items-center justify-center'>
         <box-icon type='solid' name='home' color={'green'}></box-icon>
         </span>
@@ -67,10 +67,14 @@ function Room(props) {
 
           </div>        
          
-         <div className="owner">
-          <p className='text-gray-400'>
-            {/* Created by : @abdirizak */}
+         <div className="owner flex items-center justify-between">
+          <p className='text-gray-400 flex items-center gap-3'>
+            <img
+            className='w-[30px] rounded-[30%]' 
+            src={room.userPhoto && room.userPhoto} alt="roomCreator" />
+            {room.creator && room.creator.split(' ')[0]}'s Room
           </p>
+          {/* <p>9 min Ago</p> */}
          </div>
         
     </div>
