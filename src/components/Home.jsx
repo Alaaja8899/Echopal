@@ -2,11 +2,8 @@ import React, { useEffect } from 'react'
 import Header from './Header'
 import Rooms from './Rooms'
 import CreateRoom from './CreateRoom'
-import { requestMicPermission } from '../extraFunctions'
 function Home() {
-  useEffect(()=>{
-      requestMicPermission()
-  },[])
+
   return (
     <div className=' relative flex flex-col gap-2 h-dvh  container mx-auto'>
       
