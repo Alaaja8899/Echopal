@@ -7,6 +7,7 @@ import MainRoom from './mainRoomComponents/MainRoom'
 import RoomContextProvider from './mainRoomComponents/RoomContext/RoomContextProvider'
 import AboutMe from './components/AboutMe'
 import { Route , BrowserRouter as Router , Routes } from 'react-router-dom'
+import UsersShowcase from './components/UsersInfo'
 function App() {
     const {authenticated , Rooming , setRooming } = useAuthContext()
     return (
@@ -20,6 +21,7 @@ function App() {
 
 
               <Route path='/' element={<RealApp/>} />
+              <Route path='/users' element={<UsersShowcase/>}   />
               <Route path='/info' element={<AboutMe/>}   />
 
 
