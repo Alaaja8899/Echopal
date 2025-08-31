@@ -1,5 +1,5 @@
 import React from 'react'
-import myIMG from '../assets/imgs/me.jpeg'
+import myIMG from '../assets/imgs/me.webp'
 import { Link } from 'react-router-dom'
 
 
